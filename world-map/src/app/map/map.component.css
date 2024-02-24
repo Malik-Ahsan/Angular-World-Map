@@ -8,7 +8,7 @@
 }
 
 svg path {
-  cursor: pointer;
+  cursor: help;
   fill: #d3d3d3;
   stroke: #fff;
   stroke-width: 1;
