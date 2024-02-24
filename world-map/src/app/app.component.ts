@@ -30,17 +30,27 @@ export class AppComponent implements OnInit, OnDestroy {
   worldBankService: WorldBankService = inject(WorldBankService);
 
   callAPI(countryId: string) {
-    this.worldBankService.getCountryData(countryId).then((data: any) => {
-      if (data) {
-        this.country.id = data[1][0].id;
-        this.country.name = data[1][0].name;
-        this.country.capital = data[1][0].capitalCity;
-        this.country.region = data[1][0].region.value;
-        this.country.incomeLevel = data[1][0].incomeLevel.value;
-        this.country.longitude = data[1][0].longitude;
-        this.country.latitude = data[1][0].latitude;
-      }
-    });
+    if (countryId === '') {
+      this.country.id = 0;
+      this.country.name = '';
+      this.country.capital = '';
+      this.country.region = '';
+      this.country.incomeLevel = '';
+      this.country.longitude = 0;
+      this.country.latitude = 0;
+    } else {
+      this.worldBankService.getCountryData(countryId).then((data: any) => {
+        if (data) {
+          this.country.id = data[1][0].id;
+          this.country.name = data[1][0].name;
+          this.country.capital = data[1][0].capitalCity;
+          this.country.region = data[1][0].region.value;
+          this.country.incomeLevel = data[1][0].incomeLevel.value;
+          this.country.longitude = data[1][0].longitude;
+          this.country.latitude = data[1][0].latitude;
+        }
+      });
+    }
   }
 
   ngOnInit() {
