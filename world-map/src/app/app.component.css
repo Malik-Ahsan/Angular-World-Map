@@ -1,4 +1,61 @@
 body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
+  background-color: rgb(39, 44, 67);
+  height: 100vh;
+  overflow: hidden;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.column {
+  flex: 1;
+  text-align: center;
+  overflow: hidden;
+}
+
+.map-column {
+  flex: 0 0 80%;
+  text-align: center;
+  overflow: hidden;
+}
+
+.details-column {
+  flex: 0 0 20%;
+  text-align: center;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  overflow: hidden;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+strong {
+  font-weight: bold;
 }
